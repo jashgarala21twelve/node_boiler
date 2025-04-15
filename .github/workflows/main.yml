@@ -30,7 +30,12 @@ jobs:
       - name: Add known hosts
         run: |
           ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
-      
+      - name: Debug SSH
+        run: |
+          chmod 600 ~/.ssh/deploy_key
+          ssh -v -i ~/.ssh/deploy_key ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} '
+            echo "SSH Connection Test"
+          '
       - name: Deploy with SSH
         run: |
           ssh -i ~/.ssh/deploy_key ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} '
