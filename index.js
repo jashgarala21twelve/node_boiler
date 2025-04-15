@@ -6,7 +6,7 @@ const PORT = 5000;
 
 app.use(cors());
 app.get('/', (req, res) => {
-  res.send('Hello, Express!!!!!!!!!!');
+  res.send('Hello, Express!!!!!!!!!! 😃 😃 😃');
 });
 app.get('/healthcheck', (req, res) => {
   res.send('Uptick Hubspot!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
